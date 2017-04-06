@@ -1,3 +1,8 @@
 'use strict';
 
-console.log('\'Allo \'Allo! Content script');
+document.addEventListener('mouseup', function (event) {
+  const sel = window.getSelection();
+  if (sel.toString().length) {
+    chrome.extension.sendRequest({'message':'setText','data': sel.toString()},function(response){})
+  }
+});
