@@ -1,16 +1,15 @@
 'use strict';
 
-chrome.runtime.onInstalled.addListener(details => {
-  console.log('previousVersion', details.previousVersion);
-});
+const ACTION_TYPES = {
+  SELECTION: 'selection'
+};
 
-chrome.tabs.onUpdated.addListener(tabId => {
-  chrome.pageAction.show(tabId);
+chrome.runtime.onMessage.addListener((message = {}) => {
+  switch (message.type) {
+    case ACTION_TYPES.SELECTION:
+      break;
+    default:
+      break;
+  }
+  return true; // required for message listener to activate
 });
-
-chrome.runtime.onMessage.addListener(message => {
-  console.log(message);
-  return true;
-});
-
-console.log('\'Allo \'Allo! Event Page for Page Action');
