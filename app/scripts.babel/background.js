@@ -1,12 +1,16 @@
 'use strict';
 
-const ACTION_TYPES = {
-  SELECTION: 'selection'
-};
+const CONSTANTS = Object.freeze({
+  ACTION_TYPES: {
+    SELECTION: 'selection'
+  }
+});
+
+chrome.storage.sync.set(CONSTANTS);
 
 chrome.runtime.onMessage.addListener((message = {}) => {
   switch (message.type) {
-    case ACTION_TYPES.SELECTION:
+    case CONSTANTS.ACTION_TYPES.SELECTION:
       break;
     default:
       break;
