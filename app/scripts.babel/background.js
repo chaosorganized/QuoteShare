@@ -9,7 +9,7 @@ chrome.tabs.onUpdated.addListener(tabId => {
 });
 
 chrome.runtime.onMessage.addListener(message => {
-  console.log(message, sender, cb);
+  console.log(message);
   return true;
 });
 
