@@ -45,5 +45,8 @@
         "single"
       ]
     }
+  },
+  "dependencies": {
+    "html2canvas": "^0.5.0-beta4"
   }
 }
